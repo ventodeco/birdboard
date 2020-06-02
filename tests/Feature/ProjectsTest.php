@@ -27,6 +27,19 @@ class ExampleTest extends TestCase
     }
 
     /** @test */
+    public function a_user_can_view_a_project()
+    {
+        // tanpa memperlihatkan exception handling
+        $this->withoutExceptionHandling();
+
+        $project = factory('App\Project')->create();
+
+        $this->get($project->path())
+            ->assertSee($project->title)
+            ->assertSee($project->description);
+    }
+
+    /** @test */
     public function a_project_requires_a_title()
     {
         $attributes = factory('App\Project')->raw(['title' => '']);
@@ -38,7 +51,7 @@ class ExampleTest extends TestCase
     public function a_project_requires_a_description()
     {
         $attributes = factory('App\Project')->raw(['description' => '']);
-        
+
         $this->post('/projects', [])->assertSessionHasErrors('description');
     }
 }
