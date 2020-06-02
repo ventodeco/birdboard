@@ -11,7 +11,7 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function a_user_can_create_a_project()
     {
         $this->assertTrue(true);
     }
