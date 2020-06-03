@@ -3,10 +3,16 @@
 @import 'variables';
 
 
+
 @tailwind base;
 @tailwind components;
+
 @tailwind utilities; 
 
-.bg-grey-light {
+.button {
+    @apply bg-blue-400 text-white no-underline rounded-lg shadow-lg text-sm py-2 px-5;
+}
+
+bg-grey-light {
     background-color: #F5F6F9;
 }
