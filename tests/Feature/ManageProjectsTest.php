@@ -14,12 +14,11 @@ class ManageProjectsTest extends TestCase
     /** @test */
     public function guests_cannot_manage_projects()
     {
-
         $project = factory(Project::class)->create();
 
         $this->get('/projects')->assertRedirect('login');
         
-        $this->get('/projects/create')->assertRedirect('login');        
+        $this->get('/projects/create')->assertRedirect('login');
         
         $this->get($project->path())->assertRedirect('login');
 
@@ -31,7 +30,8 @@ class ManageProjectsTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $this->actingAs(factory('App\User')->create());
+        $this->signIn();
+        // $this->actingAs(factory('App\User')->create());
 
         $this->get('/projects/create')->assertStatus(200);
 
@@ -50,8 +50,8 @@ class ManageProjectsTest extends TestCase
     /** @test */
     public function a_user_can_view_their_project()
     {
-
-        $this->be(factory('App\User')->create());
+        $this->signIn();
+        
         // tanpa memperlihatkan exception handling
         $this->withoutExceptionHandling();
 
@@ -65,11 +65,11 @@ class ManageProjectsTest extends TestCase
     /** @test */
     public function an_authenticated_user_cannot_view_the_projects_of_others()
     {
-        $this->be(factory('App\User')->create());
+        $this->signIn();
 
         // $this->withoutExceptionHandling();
 
-        $project = factory('App\Project')->create();   
+        $project = factory('App\Project')->create();
 
         $this->get($project->path())->assertStatus(403);
     }
@@ -77,22 +77,20 @@ class ManageProjectsTest extends TestCase
     /** @test */
     public function a_project_requires_a_title()
     {
-        $this->actingAs(factory('App\User')->create());
+        $this->signIn();
 
         $attributes = factory('App\Project')->raw(['title' => '']);
 
-        $this->post('/projects', $attributes)->assertSessionHasErrors('title');   
+        $this->post('/projects', $attributes)->assertSessionHasErrors('title');
     }
 
     /** @test */
     public function a_project_requires_a_description()
     {
-        $this->actingAs(factory('App\User')->create());
+        $this->signIn();
 
         $attributes = factory('App\Project')->raw(['description' => '']);
 
         $this->post('/projects', $attributes)->assertSessionHasErrors('description');
     }
-    
-
 }
