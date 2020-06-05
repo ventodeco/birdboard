@@ -2,7 +2,6 @@
 
 namespace App\Observers;
 
-use App\Activity;
 use App\Project;
 
 class ProjectObserver
@@ -17,6 +16,11 @@ class ProjectObserver
     public function created(Project $project)
     {
         $project->recordActivity('created');
+    }
+
+    public function updating(Project $project)
+    {
+        $project->old = $project->getOriginal();
     }
 
     /**
