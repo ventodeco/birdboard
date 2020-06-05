@@ -1,25 +1,24 @@
 <?php
 
-namespace App\Observers;
+// namespace App\Observers;
 
-use App\Task;
+// use App\Task;
 
-class TaskObserver
-{
-    /**
-     * Handle the task "created" event.
-     *
-     * @param  \App\Task  $task
-     * @return void
-     */
-    public function created(Task $task)
-    {
-        $task->recordActivity('created_task');
-    }
+// class TaskObserver
+// {
+//     /**
+//      * Handle the task "created" event.
+//      *
+//      * @param  \App\Task  $task
+//      * @return void
+//      */
+//     public function created(Task $task)
+//     {
+//         $task->recordActivity('created_task');
+//     }
 
-    public function deleted(Task $task)
-    {
-        $task->project->recordActivity('deleted_task');
-    }
-
-}
+//     public function deleted(Task $task)
+//     {
+//         $task->project->recordActivity('deleted_task');
+//     }
+// }
