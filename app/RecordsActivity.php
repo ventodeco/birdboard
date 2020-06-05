@@ -29,14 +29,14 @@ trait RecordsActivity
     {
         return "{$description}_" . strtolower(class_basename($this));
     }
-
+    
     protected static function recordableEvents()
     {
         if (isset(static::$recordableEvents)) {
             return static::$recordableEvents;
         }
             
-        return ['created', 'updated', 'deleted'];
+        return ['created', 'updated'];
     }
 
     public function recordActivity($description)

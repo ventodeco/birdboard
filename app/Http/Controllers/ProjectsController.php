@@ -16,7 +16,7 @@ class ProjectsController extends Controller
     }
 
     public function show(Project $project)
-    {   
+    {
         $this->authorize('update', $project);
 
         return view('projects.show', compact('project'));
@@ -42,15 +42,22 @@ class ProjectsController extends Controller
     public function update(UpdateProjectRequest $form)
     {
         return redirect($form->save()->path());
-    }   
+    }
+    
+    public function destroy(Project $project)
+    {
+        $this->authorize('update', $project);
+        
+        $project->delete();
+        return redirect('/projects');
+    }
 
     protected function validateRequest()
     {
         return request()->validate([
-            'title' => 'sometimes|required', 
+            'title' => 'sometimes|required',
             'description' => 'sometimes|required',
             'notes' => 'nullable'
         ]);
-
     }
 }
