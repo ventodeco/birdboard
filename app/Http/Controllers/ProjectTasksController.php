@@ -29,6 +29,8 @@ class ProjectTasksController extends Controller
 
         $task->$method();
 
+        request('completed') ? $task->complete() : $task->incomplete();
+
         return redirect($project->path());
     }
 }

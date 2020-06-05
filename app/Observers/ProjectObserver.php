@@ -7,6 +7,7 @@ use App\Project;
 
 class ProjectObserver
 {
+
     /**
      * Handle the project "created" event.
      *

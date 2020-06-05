@@ -28,7 +28,7 @@ class Project extends Model
         return $this->tasks()->create(compact('body'));
     }
 
-    protected function recordActivity($description)
+    public function recordActivity($description)
     {
         $this->activity()->create(compact('description'));
     }
