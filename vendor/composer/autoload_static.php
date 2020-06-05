@@ -485,6 +485,7 @@ class ComposerStaticInit5b4fb3de98d4086e7a9b303f212d836a
     );
 
     public static $classMap = array (
+        'App\\Activity' => __DIR__ . '/../..' . '/app/Activity.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
@@ -506,6 +507,8 @@ class ComposerStaticInit5b4fb3de98d4086e7a9b303f212d836a
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\UpdateProjectRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateProjectRequest.php',
+        'App\\Policies\\ProjectPolicy' => __DIR__ . '/../..' . '/app/Policies/ProjectPolicy.php',
         'App\\Project' => __DIR__ . '/../..' . '/app/Project.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -4740,10 +4743,13 @@ class ComposerStaticInit5b4fb3de98d4086e7a9b303f212d836a
         'Symfony\\Polyfill\\Php73\\Php73' => __DIR__ . '/..' . '/symfony/polyfill-php73/Php73.php',
         'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
+        'Tests\\Feature\\ActivityFeedTest' => __DIR__ . '/../..' . '/tests/Feature/ActivityFeedTest.php',
         'Tests\\Feature\\ManageProjectsTest' => __DIR__ . '/../..' . '/tests/Feature/ManageProjectsTest.php',
         'Tests\\Feature\\ProjectTasksTest' => __DIR__ . '/../..' . '/tests/Feature/ProjectTasksTest.php',
+        'Tests\\Setup\\ProjectFactory' => __DIR__ . '/../..' . '/tests/Setup/ProjectFactory.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ProjectTest' => __DIR__ . '/../..' . '/tests/Unit/ProjectTest.php',
+        'Tests\\Unit\\TaskTest' => __DIR__ . '/../..' . '/tests/Unit/TaskTest.php',
         'Tests\\Unit\\UserTest' => __DIR__ . '/../..' . '/tests/Unit/UserTest.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',

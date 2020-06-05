@@ -44,13 +44,13 @@ class ProjectsController extends Controller
         return redirect($form->save()->path());
     }   
 
-    // protected function validateRequest()
-    // {
-    //     return request()->validate([
-    //         'title' => 'sometimes|required', 
-    //         'description' => 'sometimes|required',
-    //         'notes' => 'nullable'
-    //     ]);
+    protected function validateRequest()
+    {
+        return request()->validate([
+            'title' => 'sometimes|required', 
+            'description' => 'sometimes|required',
+            'notes' => 'nullable'
+        ]);
 
-    // }
+    }
 }
