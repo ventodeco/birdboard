@@ -17878,34 +17878,72 @@ video {
   transition-delay: 1000ms;
 }
 
+.theme-light {
+  --page-background-color: #f5f6f9;
+  --card-background-color: white;
+  --button-background-color: #47cdff;
+  --header-background-color: white;
+  --text-default-color: #222;
+  --text-accent-color: #47cdff;
+  --text-accent-light-color: #8ae2fe;
+  --text-muted-color: rgba(0, 0, 0, 0.3);
+  --text-muted-light-color: rgba(255, 255, 255, 0.1);
+  --text-muted-light-color: #e1e6e8;
+}
+
+.theme-dark {
+  --page-background-color: #17181e;
+  --card-background-color: #1f2027;
+  --button-background-color: #59b6f9;
+  --header-background-color: #1f2027;
+  --text-default-color: #fff;
+  --text-muted-color: rgba(255, 255, 255, 0.5);
+  --text-muted-light-color: rgba(255, 255, 255, 0.3);
+  --text-accent-color: #47cdff;
+  --text-accent-light-color: #8ae2fe;
+}
+
 .button {
-  --bg-opacity: 1;
-  background-color: #63b3ed;
-  background-color: rgba(99, 179, 237, var(--bg-opacity));
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
   text-decoration: none;
   border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   font-size: 0.875rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+  --bg-opacity: 1;
+  background-color: #63b3ed;
+  background-color: rgba(99, 179, 237, var(--bg-opacity));
+}
+
+.theme-light .button {
+  box-shadow: 0 2px 7px 0 #b0eaff;
+}
+
+.theme-dark .button {
+  box-shadow: 0 2px 7px 0 #00658b;
 }
 
 .card {
-  --bg-opacity: 1;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  @apply card p-5 rounded-lg shadow;
   padding: 1.25rem;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
-.bg-grey-light {
-  background-color: #F5F6F9;
+body,
+button {
+  --text-opacity: 1;
+  color: #000;
+  color: rgba(0, 0, 0, var(--text-opacity));
+}
+
+.section {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 @media (min-width: 640px) {

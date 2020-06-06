@@ -1,0 +1,15 @@
+// .button {
+//     @apply card text-white no-underline rounded-lg shadow-lg text-sm py-2 px-5;
+// }
+
+.button {
+    @apply text-white no-underline rounded-lg text-sm py-2 px-5 bg-blue-400    ;
+
+    .theme-light & {
+        box-shadow: 0 2px 7px 0 #b0eaff;
+    }
+
+    .theme-dark & {
+        box-shadow: 0 2px 7px 0 #00658b;
+    }
+}

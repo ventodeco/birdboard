@@ -25,5 +25,7 @@
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
     },
-    "dependencies": {}
+    "dependencies": {
+        "vue-js-modal": "^2.0.0-rc.3"
+    }
 }

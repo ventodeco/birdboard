@@ -1,22 +1,29 @@
+// @import 'themes/light';
+// @import 'themes/dark';
 
-// Variables
-@import 'variables';
-
-
+// @import 'components/button';
+// @import 'components/card';
 
 @tailwind base;
 @tailwind components;
 
 @tailwind utilities; 
 
-.button {
-    @apply bg-blue-400 text-white no-underline rounded-lg shadow-lg text-sm py-2 px-5;
+
+
+
+@import 'themes/light';
+@import 'themes/dark';
+
+@import 'components/button';
+@import 'components/card';
+@import 'components/dropdown';
+
+body,
+button {
+    @apply text-black;
 }
 
-.card {
-    @apply bg-white p-5 rounded-lg shadow;
-}
-
-.bg-grey-light {
-    background-color: #F5F6F9;
+.section {
+    @apply px-8;
 }
