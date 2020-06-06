@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
@@ -35,7 +34,7 @@ class ProjectInvitationRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.exists' => 'The user you are inviting must have a Birdboard account.'
+            'email.exists' => 'The user you are inviting must have a Birdboard account'
         ];
     }
 }
