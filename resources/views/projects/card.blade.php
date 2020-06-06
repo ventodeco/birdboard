@@ -5,11 +5,13 @@
 
     <div class="text-gray-500 mb-4 flex-1">{{ Str::limit($project->description, 100) }}</div>
 
-    <footer>
-        <form action="{{ $project->path() }}" class="text-right" method="POST">
-            @method('DELETE')
-            @csrf
-            <button type="submit" class="text-xs">Delete</button>
-        </form>
-    </footer>
+    @can ('manage', $project)
+        <footer>
+            <form action="{{ $project->path() }}" class="text-right" method="POST">
+                @method('DELETE')
+                @csrf
+                <button type="submit" class="text-xs">Delete</button>
+            </form>
+        </footer>
+    @endcan
 </div>
